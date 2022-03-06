@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+  labels:
+    name: myapp
+spec:
+  selector:
+    matchLabels:
+      name: myapp
+  template:
+    metadata:
+      labels:
+        name: myapp
+    spec:
+      containers:
+        - name: myapp
+          image: pz/demo
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+
